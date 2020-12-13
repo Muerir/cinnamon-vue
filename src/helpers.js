@@ -1,0 +1,1 @@
+export var BACKEND_URL = 'https://muerir.pythonanywhere.com'
