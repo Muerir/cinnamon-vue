@@ -60,7 +60,6 @@ export default {
     },
     methods: {
         async createProduct() {
-            console.log("Hola");
             this.loading = true;
             var scoped = this;
             await axios({
@@ -79,6 +78,7 @@ export default {
                 .then(function(response) {
                     console.log(response);
                     scoped.loading = false;
+                    scoped.$emit("success");
                     scoped.$emit("close");
                 })
                 .catch(function(error) {
