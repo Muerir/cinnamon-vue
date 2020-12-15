@@ -19,14 +19,21 @@
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <b-button type="is-danger" expanded v-on:click="deleteProduct(item.id)">
+                    <b-button
+                        type="is-danger"
+                        expanded
+                        v-on:click="deleteProduct(item.id)"
+                    >
                         Eliminar
                     </b-button>
                 </div>
                 <div class="level-item">
-                    <b-button type="is-warning" expanded>
-                        Editar
-                    </b-button>
+                    <router-link
+                        :to="{ path:`/products/${item.id}`}">
+                        <b-button type="is-warning" expanded>
+                            Editar
+                        </b-button>
+                    </router-link>
                 </div>
             </div>
             <hr />
@@ -36,8 +43,6 @@
             :total="products.length"
             v-model="current"
             :per-page="perPage"
-            :icon-prev="prevIcon"
-            :icon-next="nextIcon"
             aria-next-label="Next page"
             aria-previous-label="Previous page"
             aria-page-label="Page"
@@ -58,28 +63,32 @@ export default {
             showDetailIcon: true,
             current: 1,
             perPage: 10,
+            isComponentModalActive: false,
         };
     },
     methods: {
         deleteProduct: async function(id) {
             var scoped = this;
             await axios({
-            method: "delete",
-            url: BACKEND_URL + "/product",
-            withCredentials: true,
-            data: {
-                id: id
-            },
-            headers: { crossDomain: true, "Content-Type": "application/json" },
-        })
-            .then(function(response) {
-                console.log(response);
-                scoped.$emit("success");
-                this.$forceUpdate();
+                method: "delete",
+                url: BACKEND_URL + "/product",
+                withCredentials: true,
+                data: {
+                    id: id,
+                },
+                headers: {
+                    crossDomain: true,
+                    "Content-Type": "application/json",
+                },
             })
-            .catch(function(error) {
-                console.log(error);
-            });
+                .then(function(response) {
+                    console.log(response);
+                    scoped.$emit("success");
+                    this.$forceUpdate();
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
         },
     },
     computed: {

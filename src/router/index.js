@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Login from "@/views/Login.vue";
 import Orders from "@/views/Orders.vue";
 import Products from "@/views/Products.vue";
+import EditProducts from "@/views/EditProducts.vue";
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,11 @@ const routes = [
         path: "/products",
         name: "Products",
         component: Products,
+    },
+    {
+        path: "/products/:id",
+        name: "EditProducts",
+        component: EditProducts,
     },
 ];
 
