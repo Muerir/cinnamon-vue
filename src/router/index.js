@@ -5,7 +5,8 @@ import Login from "@/views/Login.vue";
 import TodayOrders from "@/views/TodayOrders.vue";
 import Products from "@/views/Products.vue";
 import EditProducts from "@/views/EditProducts.vue";
-import AllOrders from "@/views/AllOrders.vue"
+import AllOrders from "@/views/AllOrders.vue";
+import NewOrder from "@/views/NewOrder.vue";
 
 Vue.use(VueRouter);
 
@@ -38,6 +39,11 @@ const routes = [
         path: "/orders/all",
         name: "AllOrders",
         component: AllOrders,
+    },
+    {
+        path: "/orders/new",
+        name: "NewOrder",
+        component: NewOrder,
     },
     {
         path: "/products",
