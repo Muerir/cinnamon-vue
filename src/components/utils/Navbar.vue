@@ -7,7 +7,7 @@
         </template>
         <template slot="start">
             <b-navbar-item>
-                <router-link :to="{ path: '/orders' }">
+                <router-link :to="{ path: '/orders/today' }">
                     Hoy
                 </router-link>
             </b-navbar-item>

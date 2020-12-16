@@ -89,7 +89,7 @@ export default {
           console.log(response);
           scoped.loading = false;
           scoped.alert = false;
-          scoped.$router.push({path: '/orders'})
+          scoped.$router.push({path: '/orders/today'})
         })
         .catch(function(error) {
           console.log(error);

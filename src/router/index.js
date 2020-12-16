@@ -2,9 +2,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "@/views/Login.vue";
-import Orders from "@/views/Orders.vue";
+import TodayOrders from "@/views/TodayOrders.vue";
 import Products from "@/views/Products.vue";
 import EditProducts from "@/views/EditProducts.vue";
+import AllOrders from "@/views/AllOrders.vue"
 
 Vue.use(VueRouter);
 
@@ -29,9 +30,14 @@ const routes = [
         component: Login,
     },
     {
-        path: "/orders",
-        name: "Orders",
-        component: Orders,
+        path: "/orders/today",
+        name: "TodayOrders",
+        component: TodayOrders,
+    },
+    {
+        path: "/orders/all",
+        name: "AllOrders",
+        component: AllOrders,
     },
     {
         path: "/products",
