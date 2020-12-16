@@ -1,6 +1,9 @@
 <template>
-    <div>
-        Hola
+    <div class="container">
+        <section class="section">
+            <h1 class="title is-3">Nueva Venta:</h1>
+            
+        </section>
     </div>
 </template>
 
@@ -12,7 +15,7 @@ export default {
     name: "NewOrderForm",
     data() {
         return {
-            products: []
+            products: [],
         };
     },
     async mounted() {
