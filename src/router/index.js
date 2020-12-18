@@ -15,6 +15,10 @@ const routes = [
         path: "/",
         name: "Home",
         component: Home,
+        beforeEnter: (to, from, next) => {
+            next({name: 'Login'})
+        }
+        
     },
     {
         path: "/login",
