@@ -23,7 +23,7 @@
                     {{ props.row.id }}
                 </b-table-column>
                 <b-table-column field="date" :label="'Fecha y Hora'" sortable centered v-slot="props">
-                    {{ dayjs(props.row.date).format('DD/MM/YYYY T hh:mm') }}
+                    {{ dayjs(props.row.date).format('DD/MM/YYYY - hh:mm') }}
                 </b-table-column>
                 <b-table-column field="total" :label="'Monto total'" sortable centered v-slot="props">
                     {{ props.row.total }} <strong>Bs. </strong>
@@ -44,6 +44,7 @@
                 </template>
             </b-table>
         </section>
+
     </div>
 </template>
 
