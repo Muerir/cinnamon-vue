@@ -103,7 +103,7 @@ export default {
     },
     methods:{
         reset(){
-            flash('Updated!');
+            
         },
     },
 };
